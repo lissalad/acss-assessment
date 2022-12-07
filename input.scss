@@ -1,7 +1,7 @@
 :root {
   --primary-font: rgb(246, 246, 246);
   --secondary-font: rgb(236, 236, 236);
-  --divider: rgba(236, 236, 236, 0.349);
+  --divider: rgba(236, 236, 236, 0.225);
   --background: rgba(240, 248, 255, 0.182);
 
 }
@@ -58,6 +58,12 @@ nav {
 nav>div>a {
   margin: 0 0 0 20px;
 }
+
+nav>div>a:hover {
+  color: rgb(185, 185, 185);
+
+}
+
 
 nav>a:nth-child(1) {
   color: var(--primary-font);
@@ -116,6 +122,8 @@ header:not(#nav>header, #cart>header) {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  gap: 5px;
+  flex-wrap: wrap;
   /* align-items: center; */
 }
 
@@ -124,7 +132,7 @@ header:not(#nav>header, #cart>header) {
 
   display: flex;
   flex-direction: column;
-  border: 2px solid var(--divider);
+  border: 2px solid rgba(0, 0, 0, 0.286);
   background-color: rgba(240, 248, 255, 0.182);
   border-radius: 16px;
   height: 350px;
@@ -169,6 +177,15 @@ header:not(#nav>header, #cart>header) {
   }
 }
 
+#forms {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
 /* ------------- CART ------------- */
 #cart {
   background-color: var(--background);
@@ -204,7 +221,7 @@ header:not(#nav>header, #cart>header) {
 
   .remove {
     background-color: rgb(218, 133, 118);
-    border: 1px solid rgb(205, 78, 56);
+    border-color: rgb(218, 133, 118);
     border-radius: 5px;
     padding: 10px;
     height: 30px;
@@ -254,9 +271,6 @@ header:not(#nav>header, #cart>header) {
     }
   }
 
-
-
-
   #total::before {
     content: "Total:"
   }
@@ -273,10 +287,101 @@ header:not(#nav>header, #cart>header) {
 }
 
 
+/* ------------- CONTACT ------------- */
+
+#contact {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  background-color: var(--background);
+  border-radius: 10px;
+  padding: 0;
+  height: fit-content;
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+    padding: 0 15px;
+
+  }
+
+  header {
+    background-color: rgb(60, 60, 60);
+    border-radius: 10px 10px 0 0;
+    padding: 10px 0;
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  #contact-inputs {
+    display: flex;
+    flex-direction: row;
+
+    >div {
+      display: flex;
+      flex-direction: column;
+      margin: 10px;
+    }
+
+
+    div:first-child {
+      width: fit-content;
+
+      label {
+        width: 230px;
+      }
+
+      div {
+        label {
+          display: flex;
+          flex-direction: row;
+          gap: 3px;
+          align-items: center;
+          margin-bottom: 5px;
+        }
+
+        label:nth-child(4) {
+          border-top: 1px solid rgba(255, 255, 255, 0.211);
+          margin-top: 20px;
+          padding-top: 10px;
+          flex-direction: row-reverse;
+          width: fit-content;
+        }
+
+      }
+
+    }
+
+    textarea {
+      min-height: 200px;
+      min-width: 340px;
+    }
+  }
+
+  button {
+    color: white;
+    background-color: rgb(60, 60, 60);
+    border: 0;
+    border-radius: 0 0 10px 10px;
+    padding: 10px 0;
+    text-align: center;
+    margin-bottom: 0;
+    font-size: 18px;
+  }
 
 
 
+}
 
+button:hover {
+  background-color: rgb(55, 55, 55) !important;
+}
 
 /* ------------- BASICS ------------- */
 a {
@@ -292,8 +397,11 @@ abbr {
 h1 {
   margin: 0;
   color: var(--primary-font);
+  font-size: 20px;
 }
 
 p {
   margin: 0;
+  font-size: 16px;
+  ;
 }
