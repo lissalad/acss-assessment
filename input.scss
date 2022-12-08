@@ -64,7 +64,6 @@ nav>div>a:hover {
 
 }
 
-
 nav>a:nth-child(1) {
   color: var(--primary-font);
   font-weight: bold;
@@ -84,8 +83,29 @@ nav>a:nth-child(1) {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 32px;
   letter-spacing: 4px;
+  position: relative;
+  overflow: hidden;
+
+  h1 {
+    font-size: 36px;
+    position: absolute;
+    left: -500px;
+    animation-name: go;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+}
+
+@keyframes go {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(350%);
+  }
 }
 
 /* ------------- ABOUT ------------- */
